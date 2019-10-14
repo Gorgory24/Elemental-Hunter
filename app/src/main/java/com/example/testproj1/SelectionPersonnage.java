@@ -24,7 +24,7 @@ public class SelectionPersonnage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fiches);
+        setContentView(R.layout.activity_selection_personnage);
         SwitchAna = (Switch) findViewById(R.id.switchAna);
         SwitchGorgory =(Switch) findViewById(R.id.switchGorgory);
         SwitchVerdrion = (Switch) findViewById(R.id.switchVerdrion);
