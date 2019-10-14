@@ -13,6 +13,10 @@ public class Game extends AppCompatActivity {
     Verdrion PersoVerdrion;
     Personnage Gorgory2;
 
+    public void fonctionInutile() {
+        return;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
