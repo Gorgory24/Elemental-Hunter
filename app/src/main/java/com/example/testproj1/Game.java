@@ -11,10 +11,7 @@ public class Game extends AppCompatActivity {
     Gorgory PersoGorgory;
     Synderella PersoSynderella;
     Verdrion PersoVerdrion;
-
-    public void FonctionInutile() {
-        return;
-    }
+    Personnage Gorgory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
