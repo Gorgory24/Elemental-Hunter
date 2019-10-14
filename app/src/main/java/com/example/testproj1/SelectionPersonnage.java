@@ -9,7 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 
-public class Fiches extends AppCompatActivity {
+public class SelectionPersonnage extends AppCompatActivity {
     private final int Ana = 0;
     private final int Gorgory = 1;
     private final int Synderella = 2;
@@ -24,7 +24,7 @@ public class Fiches extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fiches);
+        setContentView(R.layout.activity_selection_personnage);
         SwitchAna = (Switch) findViewById(R.id.switchAna);
         SwitchGorgory =(Switch) findViewById(R.id.switchGorgory);
         SwitchVerdrion = (Switch) findViewById(R.id.switchVerdrion);
