@@ -7,46 +7,55 @@
     tools:context=".Game">
 
     <Button
-        android:id="@+id/ButAna"
-        android:layout_width="65dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="24dp"
-        android:text="Ana"
+        android:id="@+id/butPerso3"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="25dp"
+        android:text="Synderella"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/butPerso2" />
+
+    <Button
+        android:id="@+id/ButPerso1"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="25dp"
+        android:text="Synderella"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/ButGorgory"
-        android:layout_width="89dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="24dp"
-        android:text="Gorgory"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButAna" />
-
-    <Button
-        android:id="@+id/ButSynderella"
-        android:layout_width="110dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="24dp"
-        android:text="Synderella"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButGorgory" />
-
-    <Button
-        android:id="@+id/ButVerdrion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/butPerso"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Verdrion"
+        android:text="Synderella"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButSynderella" />
+        app:layout_constraintStart_toEndOf="@+id/ButPerso1" />
+
+    <Button
+        android:id="@+id/butPerso2"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="25dp"
+        android:text="Synderella"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/butPerso" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
