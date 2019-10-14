@@ -9,7 +9,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 
 
-public class Fiches extends AppCompatActivity {
+public class SelectionPersonnage extends AppCompatActivity {
     private final int Ana = 0;
     private final int Gorgory = 1;
     private final int Synderella = 2;
