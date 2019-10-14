@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), SelectionPersonnage.class);
         startActivity(intent);
     }
+
     public void Quit(View V){
         finish();
     }

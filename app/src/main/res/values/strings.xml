@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TestProj1</string>
+    <string name="Commencer">Commencer</string>
+    <string name="RDV">Rendez vous EH</string>
+    <string name="Quitter">Quitter</string>
+    <string name="Lancer">Lancer la partie</string>
 </resources>
