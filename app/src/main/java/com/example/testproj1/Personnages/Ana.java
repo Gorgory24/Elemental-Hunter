@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class Ana extends Personnage {
     public Ana() {
         super("Ana", 40, 3, 1, new Dice(1, 10), new Dice(1, 8));

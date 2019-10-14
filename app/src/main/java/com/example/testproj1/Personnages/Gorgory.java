@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class Gorgory extends Personnage {
     public Gorgory() {
         super("Gorgory", 40, 1, 3, new Dice(1, 8), new Dice(1, 10));

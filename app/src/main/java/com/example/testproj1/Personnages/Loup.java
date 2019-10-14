@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class Loup extends Invocation {
     Dice Compétence;
     public Loup() {

@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class J extends Personnage {
     int EvoInvoc = 1;
     Loup loup;

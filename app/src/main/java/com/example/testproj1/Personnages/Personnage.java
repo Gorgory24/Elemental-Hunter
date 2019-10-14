@@ -1,5 +1,6 @@
-package com.example.testproj1;
-public class Personnage extends Character{
+package com.example.testproj1.Personnages;
+
+public class Personnage extends Character {
     int mana;
     boolean Quete = false;
     public Personnage(String name, int PV,int DEFP, int DEFM,Dice ATKP,Dice ATKM) {
