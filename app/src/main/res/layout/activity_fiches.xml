@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fiches">
+
+
+    <TextView
+        android:id="@+id/Ana"
+        android:layout_width="95dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="60dp"
+        android:text="Ana"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Gorgory"
+        android:layout_width="97dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="44dp"
+        android:text="Gorgory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ana" />
+
+    <TextView
+        android:id="@+id/Synderella"
+        android:layout_width="100dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="44dp"
+        android:text="Synderella"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Gorgory" />
+
+    <TextView
+        android:id="@+id/Verdrion"
+        android:layout_width="98dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="44dp"
+        android:text="Verdrion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Synderella" />
+
+    <Switch
+        android:id="@+id/switchAna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="60dp"
+        android:text="Activer"
+        app:layout_constraintStart_toEndOf="@+id/Ana"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switchGorgory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="44dp"
+        android:text="Activer"
+        app:layout_constraintStart_toEndOf="@+id/Gorgory"
+        app:layout_constraintTop_toBottomOf="@+id/switchAna" />
+
+    <Switch
+        android:id="@+id/switchSynderella"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginTop="48dp"
+        android:text="Activer"
+        app:layout_constraintStart_toEndOf="@+id/Synderella"
+        app:layout_constraintTop_toBottomOf="@+id/switchGorgory" />
+
+    <Switch
+        android:id="@+id/switchVerdrion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="36dp"
+        android:text="Activer"
+        app:layout_constraintStart_toEndOf="@+id/Verdrion"
+        app:layout_constraintTop_toBottomOf="@+id/switchSynderella" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="168dp"
+        android:layout_marginRight="168dp"
+        android:layout_marginBottom="104dp"
+        android:text="Lancer la partie"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
