@@ -4,7 +4,7 @@ public class Verdrion extends Personnage {
         super("Verdrion", 40, 3, 1, new Dice(1, 10), new Dice(1, 8));
     }
     int NbCumulAtk = 0;
-    int DgtSuppCumul = 2;
+    int DgtSuppCumul = 80002;
     int NbDgtSupp = 0;
 
     public void EstAttaqué(){
