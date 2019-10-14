@@ -8,6 +8,7 @@ public class Ana extends Personnage {
     Dice Crit = new Dice(1,6);
     Dice CritFurtif = new Dice(1,4);
     Dice DgtCrit = new Dice(1,10);
+    Dice yolo;
 
     public int getCoupCritique(){
         return this.CoupCritique;
