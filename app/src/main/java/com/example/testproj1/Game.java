@@ -4,6 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.testproj1.Personnages.Ana;
+import com.example.testproj1.Personnages.Gorgory;
+import com.example.testproj1.Personnages.Synderella;
+import com.example.testproj1.Personnages.Verdrion;
+
 public class Game extends AppCompatActivity {
 
     boolean[] result = new boolean[4];

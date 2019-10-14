@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class Synderella extends Personnage {
     public Synderella() {
         super("Synderella", 40, 1, 3, new Dice(1, 8), new Dice(1, 10));

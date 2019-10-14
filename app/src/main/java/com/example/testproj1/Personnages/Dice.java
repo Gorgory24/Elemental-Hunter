@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 import java.util.Random;
 
 public class Dice {

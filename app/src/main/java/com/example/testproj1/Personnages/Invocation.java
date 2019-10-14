@@ -1,4 +1,4 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
 public class Invocation extends Personnage {
     int level;
     int Compteurlvlup;

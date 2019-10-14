@@ -1,4 +1,5 @@
-package com.example.testproj1;
+package com.example.testproj1.Personnages;
+
 public class Monster extends Character {
     public Monster(String name, int PV,int DEFP, int DEFM,Dice ATKP,Dice ATKM) {
         super(name,PV,DEFP,DEFM,ATKP,ATKM);
