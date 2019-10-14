@@ -11,12 +11,12 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginBottom="20dp"
         android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ButPerso0"
         app:layout_constraintStart_toEndOf="@+id/ButPerso2" />
 
     <Button
@@ -24,12 +24,12 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="24dp"
         android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -37,9 +37,9 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginBottom="24dp"
         android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,12 +50,12 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="20dp"
         android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButPerso0" />
+        app:layout_constraintBottom_toTopOf="@+id/ButPerso1"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
