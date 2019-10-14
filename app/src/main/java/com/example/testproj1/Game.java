@@ -12,6 +12,8 @@ public class Game extends AppCompatActivity {
     Synderella PersoSynderella;
     Verdrion PersoVerdrion;
 
+    Personnage Gorgory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
