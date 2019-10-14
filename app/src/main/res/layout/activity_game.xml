@@ -7,17 +7,17 @@
     tools:context=".Game">
 
     <Button
-        android:id="@+id/butPerso3"
+        android:id="@+id/ButPerso3"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Synderella"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/butPerso2" />
+        app:layout_constraintStart_toEndOf="@+id/ButPerso2" />
 
     <Button
         android:id="@+id/ButPerso1"
@@ -27,35 +27,35 @@
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Synderella"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/butPerso"
+        android:id="@+id/ButPerso0"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Synderella"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ButPerso1" />
 
     <Button
-        android:id="@+id/butPerso2"
+        android:id="@+id/ButPerso2"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Synderella"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/butPerso" />
+        app:layout_constraintStart_toEndOf="@+id/ButPerso0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

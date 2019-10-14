@@ -68,7 +68,7 @@ public class SelectionPersonnage extends AppCompatActivity {
     }
 
     public void Launch(View view){
-        Intent intent = new Intent();
+        Intent intent = new Intent(getApplicationContext(), Game.class);
         intent.putExtra("Personnage", result);
         startActivity(intent);
     }
