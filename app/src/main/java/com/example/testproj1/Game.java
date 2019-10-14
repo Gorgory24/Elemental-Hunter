@@ -2,7 +2,9 @@ package com.example.testproj1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.example.testproj1.Personnages.Ana;
@@ -63,6 +65,7 @@ public class Game extends AppCompatActivity {
                 }
             }
         }
+        Invisible();
     }
 
     public void PlaceBouton(String name){
@@ -74,5 +77,22 @@ public class Game extends AppCompatActivity {
                 break;
             }
         }
+    }
+
+    public void Invisible()
+    {
+        for(int j = 0; j<4; j++)
+        {
+            if(BoutonPersos[j].getText().equals("Perso"))
+            {
+                BoutonPersos[j].setVisibility(View.INVISIBLE);
+            }
+        }
+    }
+
+    public void AjoutMonstre(View v)
+    {
+        Intent intent = new Intent(getApplicationContext(), FicheActivity.class);
+        startActivity(intent);
     }
 }
