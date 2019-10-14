@@ -13,6 +13,8 @@ public class Game extends AppCompatActivity {
     Verdrion PersoVerdrion;
     Personnage Gorgory2;
 
+    Personnage Gorgory3;
+
     public void fonctionInutile() {
         return;
     }
