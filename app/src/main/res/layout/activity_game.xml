@@ -6,4 +6,47 @@
     android:layout_height="match_parent"
     tools:context=".Game">
 
+    <Button
+        android:id="@+id/ButAna"
+        android:layout_width="65dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Ana"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/ButGorgory"
+        android:layout_width="89dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginBottom="24dp"
+        android:text="Gorgory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ButAna" />
+
+    <Button
+        android:id="@+id/ButSynderella"
+        android:layout_width="110dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="24dp"
+        android:text="Synderella"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ButGorgory" />
+
+    <Button
+        android:id="@+id/ButVerdrion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="25dp"
+        android:text="Verdrion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ButSynderella" />
 </androidx.constraintlayout.widget.ConstraintLayout>

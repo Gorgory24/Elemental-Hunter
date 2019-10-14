@@ -1,12 +1,11 @@
 package com.example.testproj1;
-public class Invocation extends Personnage {
+public class Invocation extends Character {
     int level;
     int Compteurlvlup;
     boolean IsSummoned;
 
     public Invocation(String name, int PV, int DEFP, int DEFM, Dice ATKP, Dice ATKM) {
         super(name, PV, DEFP, DEFM, ATKP, ATKM);
-        this.mana = 0;
         this.level = 1;
         this.Compteurlvlup = 0;
         this.IsSummoned = false;
