@@ -20,6 +20,7 @@ public class SelectionPersonnage extends AppCompatActivity {
     private Switch SwitchGorgory;
     private Switch SwitchSynderella;
     private Switch SwitchVerdrion;
+    private View SelecVue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,20 @@ public class SelectionPersonnage extends AppCompatActivity {
         SwitchGorgory =(Switch) findViewById(R.id.switchGorgory);
         SwitchVerdrion = (Switch) findViewById(R.id.switchVerdrion);
         SwitchSynderella = (Switch) findViewById(R.id.switchSynderella);
+        SelecVue = (View) findViewById(R.id.SelecVue);
+        String theme = getIntent().getStringExtra("theme");
+
+        switch (theme){
+            case "soir" :
+                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                break;
+            case "matin" :
+                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+                break;
+            case "midi":
+                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+                break;
+        }
 
         for(int i=0; i<4; i++){
             result[i] = false;
@@ -70,6 +85,7 @@ public class SelectionPersonnage extends AppCompatActivity {
     public void Launch(View view){
         Intent intent = new Intent(getApplicationContext(), Game.class);
         intent.putExtra("Personnage", result);
+        intent.putExtra("theme", "soir");
         startActivity(intent);
     }
 
