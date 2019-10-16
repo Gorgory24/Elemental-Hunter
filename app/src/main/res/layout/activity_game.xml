@@ -65,9 +65,87 @@
         android:layout_height="56dp"
         android:layout_marginTop="50dp"
         android:text="+"
-        android:onClick="AjoutMonstre"
+        android:onClick="AddMonstre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Monstre1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monstre"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.04000002" />
+
+    <Button
+        android:id="@+id/Monstre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="26dp"
+        android:text="Monstre"
+        app:layout_constraintStart_toEndOf="@+id/Monstre1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Monstre3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="35dp"
+        android:text="Monstre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Monstre1" />
+
+    <Button
+        android:id="@+id/Monstre4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="35dp"
+        android:text="Monstre"
+        app:layout_constraintStart_toEndOf="@+id/Monstre3"
+        app:layout_constraintTop_toBottomOf="@+id/Monstre2" />
+
+    <Button
+        android:id="@+id/Monstre6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="35dp"
+        android:text="Monstre"
+        app:layout_constraintStart_toEndOf="@+id/Monstre5"
+        app:layout_constraintTop_toBottomOf="@+id/Monstre4" />
+
+    <Button
+        android:id="@+id/Monstre5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="35dp"
+        android:text="Monstre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Monstre3" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fiche"
+        android:onClick="GoFiche"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

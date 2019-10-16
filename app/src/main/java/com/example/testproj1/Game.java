@@ -25,7 +25,14 @@ public class Game extends AppCompatActivity {
     Button BoutonPerso1;
     Button BoutonPerso2;
     Button BoutonPerso3;
+    Button BoutonMonstre1;
+    Button BoutonMonstre2;
+    Button BoutonMonstre3;
+    Button BoutonMonstre4;
+    Button BoutonMonstre5;
+    Button BoutonMonstre6;
     Button[] BoutonPersos;
+    Button[] BoutonMonstres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +42,21 @@ public class Game extends AppCompatActivity {
         BoutonPerso2 = (Button) findViewById(R.id.ButPerso2);
         BoutonPerso3 = (Button) findViewById(R.id.ButPerso3);
         BoutonPerso0 = (Button) findViewById(R.id.ButPerso0);
+        BoutonMonstre1 = (Button) findViewById(R.id.Monstre1);
+        BoutonMonstre2 = (Button) findViewById(R.id.Monstre2);
+        BoutonMonstre3 = (Button) findViewById(R.id.Monstre3);
+        BoutonMonstre4 = (Button) findViewById(R.id.Monstre4);
+        BoutonMonstre5 = (Button) findViewById(R.id.Monstre5);
+        BoutonMonstre6 = (Button) findViewById(R.id.Monstre6);
+        BoutonMonstre1.setVisibility(View.INVISIBLE);
+        BoutonMonstre2.setVisibility(View.INVISIBLE);
+        BoutonMonstre3.setVisibility(View.INVISIBLE);
+        BoutonMonstre4.setVisibility(View.INVISIBLE);
+        BoutonMonstre5.setVisibility(View.INVISIBLE);
+        BoutonMonstre6.setVisibility(View.INVISIBLE);
         GameVue = (View) findViewById(R.id.GameVue);
         BoutonPersos = new Button[4];
+        BoutonMonstres = new Button[6];
         BoutonPersos[0] = BoutonPerso1;
         BoutonPersos[1] = BoutonPerso0;
         BoutonPersos[2] = BoutonPerso2;
@@ -106,9 +126,19 @@ public class Game extends AppCompatActivity {
         }
     }
 
-    public void AjoutMonstre(View v)
+    public void GoFiche(View v)
     {
         Intent intent = new Intent(getApplicationContext(), FicheActivity.class);
         startActivity(intent);
+    }
+
+    public void AddMonstre(View v){
+        for(int j = 0; j<6; j++)
+        {
+            if(BoutonMonstres[j].getText().equals("Monstre"))
+            {
+                BoutonMonstres[j].setText("Monstre1");
+            }
+        }
     }
 }
