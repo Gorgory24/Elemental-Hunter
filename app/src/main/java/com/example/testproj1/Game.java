@@ -31,6 +31,7 @@ public class Game extends AppCompatActivity {
     Button BoutonMonstre4;
     Button BoutonMonstre5;
     Button BoutonMonstre6;
+    Button BoutonAdd;
     Button[] BoutonPersos;
     Button[] BoutonMonstres;
 
@@ -48,6 +49,7 @@ public class Game extends AppCompatActivity {
         BoutonMonstre4 = (Button) findViewById(R.id.Monstre4);
         BoutonMonstre5 = (Button) findViewById(R.id.Monstre5);
         BoutonMonstre6 = (Button) findViewById(R.id.Monstre6);
+        BoutonAdd = (Button) findViewById(R.id.AddMonster);
         BoutonMonstre1.setVisibility(View.INVISIBLE);
         BoutonMonstre2.setVisibility(View.INVISIBLE);
         BoutonMonstre3.setVisibility(View.INVISIBLE);
@@ -61,6 +63,12 @@ public class Game extends AppCompatActivity {
         BoutonPersos[1] = BoutonPerso0;
         BoutonPersos[2] = BoutonPerso2;
         BoutonPersos[3] = BoutonPerso3;
+        BoutonMonstres[0] = BoutonMonstre1;
+        BoutonMonstres[1] = BoutonMonstre2;
+        BoutonMonstres[2] = BoutonMonstre3;
+        BoutonMonstres[3] = BoutonMonstre4;
+        BoutonMonstres[4] = BoutonMonstre5;
+        BoutonMonstres[5] = BoutonMonstre6;
         String theme = getIntent().getStringExtra("theme");
 
         switch (theme){
@@ -132,13 +140,16 @@ public class Game extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void AddMonstre(View v){
+    public void AjoutMonstre(View v){
         for(int j = 0; j<6; j++)
         {
             if(BoutonMonstres[j].getText().equals("Monstre"))
             {
                 BoutonMonstres[j].setText("Monstre1");
+                BoutonMonstres[j].setVisibility(View.VISIBLE);
+                break;
             }
         }
+       //System.out.println("------------------ Here ----------------------");
     }
 }

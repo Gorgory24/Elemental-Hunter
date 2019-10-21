@@ -65,7 +65,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="50dp"
         android:text="+"
-        android:onClick="AddMonstre"
+        android:onClick="AjoutMonstre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
