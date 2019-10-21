@@ -8,6 +8,7 @@ public class Personnage extends Character implements Serializable {
     public Personnage(String name, int PV,int DEFP, int DEFM,Dice ATKP,Dice ATKM) {
         super(name,PV,DEFP,DEFM,ATKP,ATKM);
         this.mana = 2;
+        
     }
 
     public String toString() {
