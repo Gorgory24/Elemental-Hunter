@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.testproj1.Personnages.Ana;
+import com.example.testproj1.Personnages.Dice;
 import com.example.testproj1.Personnages.Gorgory;
+import com.example.testproj1.Personnages.Personnage;
 import com.example.testproj1.Personnages.Synderella;
 import com.example.testproj1.Personnages.Verdrion;
 
@@ -134,9 +136,36 @@ public class Game extends AppCompatActivity {
         }
     }
 
+    public Personnage getPersonnageWithName(String name)
+    {
+        switch (name)
+        {
+            case "Ana":
+                return PersoAna;
+
+            case "Gorgory":
+                return PersoGorgory;
+
+            case "Synderella":
+                return PersoSynderella;
+
+            case "Verdrion":
+                return PersoVerdrion;
+
+        }
+
+        // Si jamais le switch/case ne passe pas, on retourne un personnage inexistant possédant des statistiques par défaut.
+        return new Personnage("NOT FOUND",0,0,0,new Dice(0,0), new Dice(0,0));
+    }
+
     public void GoFiche(View v)
     {
+        Button localButton = (Button)v;
+
         Intent intent = new Intent(getApplicationContext(), FicheActivity.class);
+        intent.putExtra("infos",getPersonnageWithName((String)localButton.getText()));
+
+
         startActivity(intent);
     }
 

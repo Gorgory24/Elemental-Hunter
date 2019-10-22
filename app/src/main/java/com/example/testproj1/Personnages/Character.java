@@ -1,6 +1,8 @@
 package com.example.testproj1.Personnages;
 
-public class Character {
+import java.io.Serializable;
+
+public class Character implements Serializable {
     String name;
     int PV;
     int DEFP;

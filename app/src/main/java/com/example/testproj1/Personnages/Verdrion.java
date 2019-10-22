@@ -1,5 +1,7 @@
 package com.example.testproj1.Personnages;
 
+import java.io.Serializable;
+
 public class Verdrion extends Personnage {
     public Verdrion() {
         super("Verdrion", 40, 3, 1, new Dice(1, 10), new Dice(1, 8));
