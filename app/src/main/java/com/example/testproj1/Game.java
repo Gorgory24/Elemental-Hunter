@@ -14,7 +14,6 @@ import com.example.testproj1.Personnages.Personnage;
 import com.example.testproj1.Personnages.Synderella;
 import com.example.testproj1.Personnages.Verdrion;
 
-
 public class Game extends AppCompatActivity {
 
     private View GameVue;
@@ -84,8 +83,6 @@ public class Game extends AppCompatActivity {
                 GameVue.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
                 break;
         }
-
-
 
         result = getIntent().getBooleanArrayExtra("Personnage");
         for(int i = 0; i<result.length; i++ ){
@@ -181,4 +178,3 @@ public class Game extends AppCompatActivity {
         }
     }
 }
-//test
