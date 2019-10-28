@@ -179,6 +179,6 @@ public class Game extends AppCompatActivity {
                 break;
             }
         }
-       //System.out.println("------------------ Here ----------------------");
     }
 }
+//test
