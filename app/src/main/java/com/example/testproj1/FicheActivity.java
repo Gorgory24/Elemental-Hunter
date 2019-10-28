@@ -131,3 +131,5 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
         return false;
     }
 }
+
+//test commit
