@@ -18,7 +18,7 @@ public class Dice implements Serializable {
         Random r = new Random();
         int result = 0;
         for(int i=0; i<NbDé; i++){
-            result = r.nextInt(ValDé-1)+1;
+            result = r.nextInt(ValDé)+1;
         }
         return result;
     }

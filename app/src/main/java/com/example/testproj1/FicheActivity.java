@@ -3,6 +3,12 @@ package com.example.testproj1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
+import android.app.Service;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -11,8 +17,12 @@ import android.widget.TextView;
 import com.example.testproj1.Personnages.Personnage;
 
 public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDetector.OnGestureListener,
-        GestureDetector.OnDoubleTapListener {
+        GestureDetector.OnDoubleTapListener, SensorEventListener {
 
+    private float x = 0;
+    private Sensor mAccelerometer;
+    private SensorManager manager;
+    private boolean accelSupported;
     private static final int SWIPE_MIN_DISTANCE = 120;
     private static final int SWIPE_THRESHOLD_VELOCITY = 200;
     private GestureDetector gestureDetector;
@@ -52,6 +62,9 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
 
         mDetector = new GestureDetectorCompat(this,this);
         mDetector.setOnDoubleTapListener(this);
+
+        manager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
+        mAccelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 
 
@@ -134,9 +147,41 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
         if (event1.getX() - event2.getX() > SWIPE_MIN_DISTANCE &&
                 Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY)
         {
-            DiceResultText.setText(InfoPersonnage.AttaqueM());
+            DiceResultText.setText("Attaque magique : "+ InfoPersonnage.AttaqueM());
         }
             return false;
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float currentx = sensorEvent.values[0];
+            if (x == 0)
+            {
+                x = currentx;
+            }
+            if (x >= currentx+4) {
+                DiceResultText.setText("Attaque physique" + InfoPersonnage.AttaqueP());
+            }
+        }
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        accelSupported = manager.registerListener(
+                this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+    @Override
+    public void onPause() {
+        if (accelSupported)
+            manager.unregisterListener(this, mAccelerometer);
+        super.onPause();
     }
 }
 

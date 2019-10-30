@@ -169,7 +169,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="212dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="@+id/imageCharacter"
         app:layout_constraintTop_toBottomOf="@+id/imageCharacter" />
