@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         AUSTRALIE
     }
 
-    private enum Theme {
+    public enum Theme {
         MATIN,
         MIDI,
         SOIR
@@ -97,7 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Action à faire quand on à la latitude et la longitude :
                 realHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + getGMT(getCountry(longitude,latitude));
+                System.out.println("CALENDAR = " + Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
                 System.out.println("REAL HOUR = " + realHour);
+                System.out.println("PAYS = " + getCountry(longitude,latitude));
 
                 // On charge le bon thème en fonction de la véritable heure obtenu :
                 switch (getTheme(realHour)) {
@@ -138,21 +140,18 @@ public class MainActivity extends AppCompatActivity {
     public Country getCountry(double longitude, double latitude) {
 
         boolean compareLongitude = (longitude >= 55.0 && longitude <= 56);
-        boolean compareLatitude =  (latitude >= -22.0 && latitude <= 20.7);
 
-        if (compareLongitude && compareLatitude)
+        if (compareLongitude)
             return Country.REUNION;
 
         compareLongitude = (longitude >= -34 && longitude <= -31);
-        compareLatitude = (latitude >= 150 && latitude <= 152);
 
-        if (compareLongitude && compareLatitude)
+        if (compareLongitude)
             return Country.AUSTRALIE;
 
         compareLongitude = (longitude >= 47 && longitude <= 49);
-        compareLatitude = (latitude >= 0 && latitude <= 2);
 
-        if (compareLongitude && compareLatitude)
+        if (compareLongitude)
             return Country.FRANCE;
 
         return Country.REUNION;
@@ -197,18 +196,17 @@ public class MainActivity extends AppCompatActivity {
         // On va envoyer en extra la bonne information selon l'heure réelle obtenu :
         switch (getTheme(realHour)) {
             case MATIN:
-                intent.putExtra("THEME","MATIN");
+                intent.putExtra("THEME",Theme.MATIN);
                 break;
 
             case MIDI:
-                intent.putExtra("THEME", "MIDI");
+                intent.putExtra("THEME", Theme.MIDI);
                 break;
 
             case SOIR:
-                intent.putExtra("THEME", "SOIR");
+                intent.putExtra("THEME", Theme.SOIR);
                 break;
         }
-
 
         startActivity(intent);
     }

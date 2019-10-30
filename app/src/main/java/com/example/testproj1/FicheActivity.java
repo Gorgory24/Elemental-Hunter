@@ -8,6 +8,7 @@ import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.testproj1.Personnages.Personnage;
@@ -30,6 +31,9 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
 
     Personnage InfoPersonnage;
 
+    MainActivity.Theme theme;
+
+    private View mainView;
 
     private static final String DEBUG_TAG = "Gestures";
     private GestureDetectorCompat mDetector;
@@ -42,6 +46,21 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
         // On récupère la classe:
         InfoPersonnage = (Personnage)getIntent().getSerializableExtra("infos");
 
+        mainView = (View)findViewById(R.id.FicheView);
+        theme = (MainActivity.Theme)getIntent().getSerializableExtra("THEME");
+
+        switch (theme){
+            case MATIN :
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+                break;
+            case MIDI :
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+                break;
+            case SOIR:
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                break;
+        }
+
         // On charge les texts view:
         loadTexts();
 
@@ -51,7 +70,6 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
         mDetector = new GestureDetectorCompat(this,this);
         mDetector.setOnDoubleTapListener(this);
     }
-
 
     public void loadTexts() {
         // On met en place les Texts View:

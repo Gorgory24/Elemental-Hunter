@@ -36,6 +36,9 @@ public class Game extends AppCompatActivity {
     Button[] BoutonPersos;
     Button[] BoutonMonstres;
 
+    MainActivity.Theme theme;
+
+    private View mainView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,17 +73,20 @@ public class Game extends AppCompatActivity {
         BoutonMonstres[3] = BoutonMonstre4;
         BoutonMonstres[4] = BoutonMonstre5;
         BoutonMonstres[5] = BoutonMonstre6;
-        String theme = getIntent().getStringExtra("theme");
+
+        mainView = (View)findViewById(R.id.GameVue);
+
+        theme = (MainActivity.Theme)getIntent().getSerializableExtra("THEME");
 
         switch (theme){
-            case "soir" :
-                GameVue.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+            case MATIN :
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
                 break;
-            case "matin" :
-                GameVue.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+            case MIDI :
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
                 break;
-            case "midi":
-                GameVue.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+            case SOIR:
+                mainView.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
                 break;
         }
 
@@ -161,6 +167,7 @@ public class Game extends AppCompatActivity {
 
         Intent intent = new Intent(getApplicationContext(), FicheActivity.class);
         intent.putExtra("infos",getPersonnageWithName((String)localButton.getText()));
+        intent.putExtra("THEME",theme);
 
 
         startActivity(intent);
