@@ -3,8 +3,6 @@ package com.example.testproj1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
-import android.content.Intent;
-import android.icu.text.IDNA;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -12,11 +10,12 @@ import android.widget.TextView;
 
 import com.example.testproj1.Personnages.Personnage;
 
-import org.w3c.dom.Text;
-
-public class FicheActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,
+public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener {
 
+    private static final int SWIPE_MIN_DISTANCE = 120;
+    private static final int SWIPE_THRESHOLD_VELOCITY = 200;
+    private GestureDetector gestureDetector;
     // Texts de base (Informations --> Ne changera pas)
     TextView pvText, manaText;
     TextView atkpText, atkmText;
@@ -27,12 +26,15 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
     TextView pvValueText, manaValueText;
     TextView atkpValueText, atkmValueText;
     TextView defpValueText, defmValueText;
+    TextView DiceResultText;
 
     Personnage InfoPersonnage;
 
 
     private static final String DEBUG_TAG = "Gestures";
     private GestureDetectorCompat mDetector;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
         atkmValueText = (TextView)findViewById(R.id.ATKMValue);
         defpValueText = (TextView)findViewById(R.id.DEFPValue);
         defmValueText = (TextView)findViewById(R.id.DEFMValue);
+        DiceResultText = (TextView)findViewById(R.id.DiceResult);
     }
 
     public void setValueTexts(Personnage personnage) {
@@ -127,9 +130,13 @@ public class FicheActivity extends AppCompatActivity implements GestureDetector.
     }
 
     @Override
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
-        return false;
+    public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY) {
+        if (event1.getX() - event2.getX() > SWIPE_MIN_DISTANCE &&
+                Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY)
+        {
+            DiceResultText.setText(InfoPersonnage.AttaqueM());
+        }
+            return false;
     }
 }
 
-//test commit

@@ -162,4 +162,15 @@
         android:text="ATKM"
         app:layout_constraintStart_toEndOf="@+id/ATKMText"
         app:layout_constraintTop_toBottomOf="@+id/ATKPValue" />
+
+    <TextView
+        android:id="@+id/DiceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="376dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/imageCharacter"
+        app:layout_constraintTop_toBottomOf="@+id/imageCharacter" />
 </androidx.constraintlayout.widget.ConstraintLayout>
