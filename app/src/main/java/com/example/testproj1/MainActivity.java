@@ -15,7 +15,6 @@ import android.view.View;
 
 import java.util.Calendar;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
@@ -39,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
     private int realHour = 0;
 
     View MainVue;
+
+    // Récupération de la dernière coordonnée via la géolocalisation :
+    private double lastLongitude = 0;
+    private double lastLatitude = 0;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
                 double latitude = location.getLatitude();
                 double longitude = location.getLongitude();
+
+                lastLongitude = longitude;
+                lastLatitude = latitude;
 
                 System.out.println("--------------> Longitude: " + longitude + "Latitude: " + latitude + " <--------");
 
@@ -208,6 +216,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        startActivity(intent);
+    }
+
+    public void GoMap(View v) {
+        Intent intent = new Intent(getApplicationContext(),MapsActivity.class);
+        intent.putExtra("LONGITUDE",lastLongitude);
+        intent.putExtra("LATITUDE",lastLatitude);
         startActivity(intent);
     }
 

@@ -4,4 +4,7 @@
     <string name="RDV">Rendez vous EH</string>
     <string name="Quitter">Quitter</string>
     <string name="Lancer">Lancer la partie</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="RemoveMarker" > Supprimer </string>
+    <string name="NextMarker" > Suivant </string>
 </resources>
