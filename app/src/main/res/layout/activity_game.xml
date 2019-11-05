@@ -12,14 +12,14 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
-        android:layout_marginBottom="24dp"
-        android:text="Perso"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
         android:onClick="GoFiche"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ButPerso1" />
+        app:layout_constraintStart_toEndOf="@+id/AddMonster" />
 
 
     <Button
@@ -27,131 +27,119 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="24dp"
-        android:text="Perso"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:onClick="GoFiche"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.19"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/AddMonster" />
 
     <Button
         android:id="@+id/ButPerso2"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Perso"
         android:onClick="GoFiche"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toTopOf="@+id/ButPerso1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/AddMonster" />
 
     <Button
         android:id="@+id/ButPerso3"
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="96dp"
         android:layout_height="48dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginLeft="104dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Perso"
         android:onClick="GoFiche"
+        android:text="Perso"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toTopOf="@+id/ButPerso0"
-        app:layout_constraintStart_toEndOf="@+id/ButPerso2" />
+        app:layout_constraintStart_toEndOf="@+id/AddMonster" />
 
     <Button
         android:id="@+id/AddMonster"
         android:layout_width="69dp"
         android:layout_height="56dp"
-        android:layout_marginTop="50dp"
-        android:text="+"
         android:onClick="AjoutMonstre"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.192" />
 
     <Button
         android:id="@+id/Monstre1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="Monstre"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04000002" />
+        app:layout_constraintEnd_toStartOf="@+id/AddMonster"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Monstre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
         android:text="Monstre"
-        app:layout_constraintStart_toEndOf="@+id/Monstre1"
+        app:layout_constraintStart_toEndOf="@+id/AddMonster"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Monstre3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="Monstre"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AddMonster"
         app:layout_constraintTop_toBottomOf="@+id/Monstre1" />
 
     <Button
         android:id="@+id/Monstre4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
         android:text="Monstre"
-        app:layout_constraintStart_toEndOf="@+id/Monstre3"
+        app:layout_constraintStart_toEndOf="@+id/AddMonster"
         app:layout_constraintTop_toBottomOf="@+id/Monstre2" />
 
     <Button
         android:id="@+id/Monstre6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
         android:text="Monstre"
-        app:layout_constraintStart_toEndOf="@+id/Monstre5"
+        app:layout_constraintStart_toEndOf="@+id/AddMonster"
         app:layout_constraintTop_toBottomOf="@+id/Monstre4" />
 
     <Button
         android:id="@+id/Monstre5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="Monstre"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/AddMonster"
         app:layout_constraintTop_toBottomOf="@+id/Monstre3" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fiche"
-        android:onClick="GoFiche"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

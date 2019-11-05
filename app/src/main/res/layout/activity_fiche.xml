@@ -163,4 +163,24 @@
         android:text="ATKM"
         app:layout_constraintStart_toEndOf="@+id/ATKMText"
         app:layout_constraintTop_toBottomOf="@+id/ATKPValue" />
+
+    <TextView
+        android:id="@+id/DiceResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageCharacter" />
+
+    <TextView
+        android:id="@+id/Explication"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="240dp"
+        android:text="Swipe à gauche pour une attaque magique sinon donne un coup d'épée avec ton téléphone pour faire une attaque physique"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageCharacter" />
 </androidx.constraintlayout.widget.ConstraintLayout>
