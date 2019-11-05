@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
 import android.app.Service;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.icu.text.IDNA;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.testproj1.Personnages.Personnage;
@@ -19,6 +22,8 @@ import com.example.testproj1.Personnages.Personnage;
 public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener, SensorEventListener {
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    private ImageView image;
     private float x = 0;
     private Sensor mAccelerometer;
     private SensorManager manager;
@@ -85,6 +90,8 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
         defpValueText = (TextView)findViewById(R.id.DEFPValue);
         defmValueText = (TextView)findViewById(R.id.DEFMValue);
         DiceResultText = (TextView)findViewById(R.id.DiceResult);
+
+        image = (ImageView) findViewById(R.id.imageCharacter);
     }
 
     public void setValueTexts(Personnage personnage) {
@@ -183,5 +190,13 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
             manager.unregisterListener(this, mAccelerometer);
         super.onPause();
     }
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
 }
 

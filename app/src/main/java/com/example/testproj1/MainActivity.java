@@ -19,25 +19,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MainVue = (View)findViewById(R.id.MainVue);
         MainVue.setBackgroundColor(getResources().getColor(R.color.couleurSoir)); //On change la couleur du background ici en couleur du soir (bleu)
+
+        if(mPlayer == null) {
+            stop();
+            mPlayer = MediaPlayer.create(this, R.raw.connecte);
+            mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                public void onCompletion(MediaPlayer mp) {
+                                                    stop();
+                                                }
+                                            }
+            );
+            mPlayer.start();
+        }
     }
 
     public void Commence(View v){
+
         Intent intent = new Intent(getApplicationContext(), SelectionPersonnage.class);
         intent.putExtra("theme","soir");
         startActivity(intent);
-    }
-
-    public void play(View v) {
-        stop();
-        mPlayer = MediaPlayer.create(this, R.raw.connecte);
-        mPlayer.setOnCompletionListener(
-                new MediaPlayer.OnCompletionListener() {
-                    public void onCompletion(MediaPlayer mp) {
-                        stop();
-                    }
-                }
-        );
-        mPlayer.start();
     }
 
     public void stop() {
