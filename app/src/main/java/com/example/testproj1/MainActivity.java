@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private double lastLongitude = 0;
     private double lastLatitude = 0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

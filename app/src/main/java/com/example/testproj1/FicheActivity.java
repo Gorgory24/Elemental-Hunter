@@ -1,9 +1,13 @@
 package com.example.testproj1;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GestureDetectorCompat;
 
+import android.Manifest;
 import android.app.Service;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -19,6 +23,9 @@ import com.example.testproj1.Personnages.Personnage;
 
 public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener, SensorEventListener {
+
+
+    private final int PERMISSIONS_REQUEST_CAMERA = 2;
 
     private float x = 0;
     private Sensor mAccelerometer;
@@ -47,8 +54,6 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
 
     private static final String DEBUG_TAG = "Gestures";
     private GestureDetectorCompat mDetector;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,8 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
 
         manager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         mAccelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
+
     }
 
     public void loadTexts() {
@@ -114,6 +121,44 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
         defpValueText.setText(""+personnage.getDEFP());
         defmValueText.setText(""+personnage.getDEFM());
     }
+
+    // ----- Appareil Photo ----
+    public void demandePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+
+            // Si on a pas la permission
+            System.out.println("---------PERMISSION FOR CAMERA NOT GRANTED YET------------");
+
+            // Permission is not granted. Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
+                // Explique ici pourquoi on à besoin de cette permission
+
+                System.out.println("EXPLAIN WHY");
+
+            } else {
+                //Si aucune explication n'est nécéssaire :
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_CAMERA);
+
+            }
+        }
+
+        else {
+            // If we have the permission :
+            useCamera();
+
+
+        }
+    }
+
+    public void useCamera() {
+        System.out.println("ON A ACCES A LA CAMERA!");
+
+
+    }
+
+
+    // ---------------- Implements pour Double Tap & Accelerometre -------------------- :
 
     public boolean onTouchEvent(MotionEvent event) {
         this.mDetector.onTouchEvent(event);
