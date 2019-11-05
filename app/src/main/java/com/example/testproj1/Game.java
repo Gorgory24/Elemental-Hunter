@@ -89,7 +89,7 @@ public class Game extends AppCompatActivity {
                 mainView.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
                 break;
         }
-        
+
 
         result = getIntent().getBooleanArrayExtra("Personnage");
         for(int i = 0; i<result.length; i++ ){
