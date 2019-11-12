@@ -1,5 +1,6 @@
 package com.example.testproj1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -7,16 +8,21 @@ import androidx.core.view.GestureDetectorCompat;
 
 import android.Manifest;
 import android.app.Service;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.icu.text.IDNA;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.testproj1.Personnages.Personnage;
@@ -55,6 +61,9 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
     private static final String DEBUG_TAG = "Gestures";
     private GestureDetectorCompat mDetector;
 
+    private Button ButtonCamera;
+    private ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +74,10 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
 
         mainView = (View)findViewById(R.id.FicheView);
         theme = (MainActivity.Theme)getIntent().getSerializableExtra("THEME");
+
+        // Gestion Appareil Photo :
+        ButtonCamera = (Button)findViewById(R.id.buttonCamera);
+        imageView = (ImageView)findViewById(R.id.imageCharacter);
 
         switch (theme){
             case MATIN :
@@ -90,6 +103,7 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
         manager = (SensorManager) getSystemService(Service.SENSOR_SERVICE);
         mAccelerometer = manager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
+        demandePermission();
 
     }
 
@@ -138,7 +152,7 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
             } else {
                 //Si aucune explication n'est nécéssaire :
                 ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_CAMERA);
+                        new String[]{Manifest.permission.CAMERA}, PERMISSIONS_REQUEST_CAMERA);
 
             }
         }
@@ -153,8 +167,37 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
 
     public void useCamera() {
         System.out.println("ON A ACCES A LA CAMERA!");
+    }
 
+    public void openCamera(View view) {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,0);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+        imageView.setImageBitmap(bitmap);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    useCamera();
+
+                } else {
+                    // On a pas la permission !!
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request.
+        }
     }
 
 
