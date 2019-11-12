@@ -8,10 +8,13 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.Calendar;
 
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     // Récupération de la dernière coordonnée via la géolocalisation :
     private double lastLongitude = 0;
     private double lastLatitude = 0;
+
+    ImageView imageBG;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,15 +116,15 @@ public class MainActivity extends AppCompatActivity {
                 // On charge le bon thème en fonction de la véritable heure obtenu :
                 switch (getTheme(realHour)) {
                     case MATIN:
-                        MainVue.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+                        MainVue.setBackgroundResource(R.drawable.matin);
                         break;
 
                     case MIDI:
-                        MainVue.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+                        MainVue.setBackgroundResource(R.drawable.midi);
                         break;
 
                     case SOIR:
-                        MainVue.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                        MainVue.setBackgroundResource(R.drawable.soir);
                         break;
                 }
 

@@ -79,15 +79,17 @@ public class FicheActivity<OSTL> extends AppCompatActivity implements GestureDet
         ButtonCamera = (Button)findViewById(R.id.buttonCamera);
         imageView = (ImageView)findViewById(R.id.imageCharacter);
 
-        switch (theme){
-            case MATIN :
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+        switch (theme) {
+            case MATIN:
+                mainView.setBackgroundResource(R.drawable.matin);
                 break;
-            case MIDI :
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+
+            case MIDI:
+                mainView.setBackgroundResource(R.drawable.midi);
                 break;
+
             case SOIR:
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                mainView.setBackgroundResource(R.drawable.soir);
                 break;
         }
 

@@ -35,15 +35,17 @@ public class SelectionPersonnage extends AppCompatActivity {
         SelecVue = (View) findViewById(R.id.SelecVue);
         theme = (MainActivity.Theme)getIntent().getSerializableExtra("THEME");
 
-        switch (theme){
-            case MATIN :
-                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+        switch (theme) {
+            case MATIN:
+                SelecVue.setBackgroundResource(R.drawable.matin);
                 break;
-            case MIDI :
-                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+
+            case MIDI:
+                SelecVue.setBackgroundResource(R.drawable.midi);
                 break;
+
             case SOIR:
-                SelecVue.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                SelecVue.setBackgroundResource(R.drawable.soir);
                 break;
         }
 

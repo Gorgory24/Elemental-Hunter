@@ -78,15 +78,17 @@ public class Game extends AppCompatActivity {
 
         theme = (MainActivity.Theme)getIntent().getSerializableExtra("THEME");
 
-        switch (theme){
-            case MATIN :
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMatin));
+        switch (theme) {
+            case MATIN:
+                mainView.setBackgroundResource(R.drawable.matin);
                 break;
-            case MIDI :
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurMidi));
+
+            case MIDI:
+                mainView.setBackgroundResource(R.drawable.midi);
                 break;
+
             case SOIR:
-                mainView.setBackgroundColor(getResources().getColor(R.color.couleurSoir));
+                mainView.setBackgroundResource(R.drawable.soir);
                 break;
         }
 
