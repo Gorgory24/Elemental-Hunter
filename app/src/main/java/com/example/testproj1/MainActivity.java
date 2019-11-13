@@ -12,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -48,14 +49,39 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageBG;
 
+    private MediaPlayer mPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         MainVue = (View)findViewById(R.id.MainVue);
 
+        if(mPlayer == null) {
+            stop();
+            mPlayer = MediaPlayer.create(this, R.raw.yp);
+            mPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                public void onCompletion(MediaPlayer mp) {
+                                                    stop();
+                                                }
+                                            }
+            );
+            mPlayer.start();
+        }
+
+        // On met une couleur de fond par défaut, au cas où la récupération de position de marche pas :
         MainVue.setBackgroundColor(getResources().getColor(R.color.colorPrimary)); //On change la couleur du background ici en couleur du soir (bleu)
+
+        // On demande la permission pour avoir la géoloclisation
         demandePermission();
+    }
+
+    // Gestion d'arrêt de la musique :
+    public void stop() {
+        if (mPlayer != null) {
+            mPlayer.release();
+            mPlayer = null;
+        }
     }
 
     // ----- Géolocalisation ----
@@ -116,14 +142,17 @@ public class MainActivity extends AppCompatActivity {
                 // On charge le bon thème en fonction de la véritable heure obtenu :
                 switch (getTheme(realHour)) {
                     case MATIN:
+                        System.out.println("ON EST IC11111111111111111111111111111111111111111111111111111111");
                         MainVue.setBackgroundResource(R.drawable.matin);
                         break;
 
                     case MIDI:
+                        System.out.println("ON EST IC222222222222222222222222222222222222222222222222222222222222");
                         MainVue.setBackgroundResource(R.drawable.midi);
                         break;
 
                     case SOIR:
+                        System.out.println("ON EST IC333333333333333333333333333333333333333333333333333333333333");
                         MainVue.setBackgroundResource(R.drawable.soir);
                         break;
                 }

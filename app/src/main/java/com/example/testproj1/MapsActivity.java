@@ -46,6 +46,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         toggleButtonEnable();
 
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -64,7 +66,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Déplace la caméra de la map à une position précise :
     private void moveCamera(double coordY, double coordX) {
         LatLng position= new LatLng(coordX, coordY);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position,9));
     }
 
     // Fonction décrivant la possibilité pour les bouton d'être actif ou non :
