@@ -86,13 +86,13 @@ public class MainActivity extends AppCompatActivity {
 
     // ----- Géolocalisation ----
     public void demandePermission() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             // Si on a pas la permission
             System.out.println("---------PERMISSION NOT GRANTED YET------------");
 
             // Permission is not granted. Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
                 // Explique ici pourquoi on à besoin de cette permission
 
                 System.out.println("EXPLAIN WHY");
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 //Si aucune explication n'est nécéssaire :
                 ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+                        new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
 
             }
         }
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         String locationContext = Context.LOCATION_SERVICE;
         LocationManager locationManager = (LocationManager)this.getSystemService(locationContext);
 
-        String provider = LocationManager.GPS_PROVIDER;
+        String provider = LocationManager.NETWORK_PROVIDER;
 
         try {
             Location location = locationManager.getLastKnownLocation(provider);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("--------------> Longitude: " + longitude + "Latitude: " + latitude + " <--------");
 
                 // Action à faire quand on à la latitude et la longitude :
-                realHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY) + getGMT(getCountry(longitude,latitude));
+                realHour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
                 System.out.println("CALENDAR = " + Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
                 System.out.println("REAL HOUR = " + realHour);
                 System.out.println("PAYS = " + getCountry(longitude,latitude));
@@ -142,17 +142,14 @@ public class MainActivity extends AppCompatActivity {
                 // On charge le bon thème en fonction de la véritable heure obtenu :
                 switch (getTheme(realHour)) {
                     case MATIN:
-                        System.out.println("ON EST IC11111111111111111111111111111111111111111111111111111111");
                         MainVue.setBackgroundResource(R.drawable.matin);
                         break;
 
                     case MIDI:
-                        System.out.println("ON EST IC222222222222222222222222222222222222222222222222222222222222");
                         MainVue.setBackgroundResource(R.drawable.midi);
                         break;
 
                     case SOIR:
-                        System.out.println("ON EST IC333333333333333333333333333333333333333333333333333333333333");
                         MainVue.setBackgroundResource(R.drawable.soir);
                         break;
                 }
